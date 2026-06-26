@@ -35,18 +35,9 @@
 - NLP Simulation — Keyword-based intent detection
 - Activity Log — Timestamped log with Show More
 
----
 
-## Setup
 
-1. Clone the repo
-2. Open CybersecurityChatbot.sln in Visual Studio 2022
-3. Replace Resources/greeting.wav with your voice recording
-4. (Optional) Run database_setup.sql in MySQL
-5. Update connection string in Services/DatabaseService.cs
-6. Press F5 to run
 
----
 
 ## Database (optional)
 
