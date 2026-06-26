@@ -35,6 +35,16 @@
 - NLP Simulation — Keyword-based intent detection
 - Activity Log — Timestamped log with Show More
 
+## Project Structure
+ConsoleApp2/
+├── ConsoleApp2.csproj
+├── Program.cs
+├── App.xaml (optional)
+├── ChatbotWindow.xaml
+├── ChatbotWindow.xaml.cs
+├── greeting.wav
+├── .slnx solution file
+└── README.md
 
 
 
