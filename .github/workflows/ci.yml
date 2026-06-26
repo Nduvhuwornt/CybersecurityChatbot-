@@ -1,0 +1,36 @@
+name: CI - Build and Validate
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore NuGet dependencies
+        run: dotnet restore CybersecurityChatbot/CybersecurityChatbot.csproj
+
+      - name: Build project (Release)
+        run: dotnet build CybersecurityChatbot/CybersecurityChatbot.csproj --configuration Release --no-restore
+
+      - name: Verify output exists
+        run: |
+          if (Test-Path "CybersecurityChatbot/bin/Release/net8.0-windows/CybersecurityChatbot.exe") {
+            Write-Host "Build successful - executable found."
+          } else {
+            Write-Host "Build output not found."
+            exit 1
+          }
+        shell: pwsh
