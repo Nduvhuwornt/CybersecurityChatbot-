@@ -54,11 +54,7 @@ Run database_setup.sql in MySQL Workbench. If MySQL is unavailable, the app runs
 
 ---
 
-## CI Screenshot
 
-Add GitHub Actions green check screenshot here after first push.
-
----
 
 ## References
 
